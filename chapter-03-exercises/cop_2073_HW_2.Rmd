@@ -18,6 +18,7 @@ You must **create a table** that shows the courses you are currently enrolled in
 - Number: in bold letters (such as **2073**)
 - Name: in italics (such as _Introduction to Data Science_)
 - Credits (such as 3)
+
 |Prefix|Number|Name|Credits|
 |:-----:|:------:|:-----------------------------:|:----:|
 |**COP**|**2073**|_Introduction to Data Science_|3|
