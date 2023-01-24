@@ -40,6 +40,22 @@ For this problem, you are asked to create a list of **4 concepts** you have lear
 
 _Edit this `.Rmd` file to include the solutions here._
 
+## Calculus 2
+
+-[U substitution](https://www.khanacademy.org/math/ap-calculus-ab/ab-integration-new/ab-6-9/a/review-applying-u-substitution)
+
+-Integration by parts
+
+-----------------------
+
+## Microeconomics
+-Supply and Demand
+
+-----------------------
+## Intro to Data Science
+-Markdown
+
+
 
 
 # Problem 3 (25 points)
