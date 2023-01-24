@@ -31,7 +31,7 @@ You must **create a table** that shows the courses you are currently enrolled in
 
 Take a screenshot of the GitHub repo you used in HW 01, add the screenshot file to the repo, and include it in this document (review how to insert a picture using markdown).
 
-
+![Screenshot of the GitHub repo used in HW 01](C:\Users\mloche1355\Documents\HW 2\book-exercises\chapter-03-exercises)
 
 
 # Problem 2 (30 points)
