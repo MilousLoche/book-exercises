@@ -65,37 +65,84 @@ In this problem you will practice some basic R operations. Include solutions to 
 
 (a) Create a variable called `my_name` that contains _your preferred name_.
 
-[my_name]: Milous
+```{r}
+  my_name <- "Milous"
+  print(my_name)
+```
+
 
 (b) Create a variable called `name_length` that holds how many letters are in `my_name`.
 
-[name_lenght]: 6
+```{r}
+ name_lenght <- 6
+print(name_lenght)
+```
+
 
 (c) Show which value is bigger: $e^\pi$ or $\pi^e$. (Use the correct expressions for Euler's constant $e$ and the irrational number $\pi$ in R)
 
-$e^\pi$ > $\pi^e$
+```{r}
+  euler <-  exp(pi)
+  irrational <- pi^exp(1)
+  euler > irrational 
+```
+
 
 (d) Use the colon operator `:` to create a vector `v` of numbers from 31 to 86. Find the length of this vector using the `length()` function.
 
-v <- 31:86
-vector_length <- length(v)
+```{r}
+ v <- 31:86
+ vector_length <- length(v)
+ print(vector_length)
+```
+
 
 (e) Use the `seq()` function to produce a range of number from -5 to 10 in 0.5 increments.
 
-prob_e <- seq(-5, 10)
-result <- prob_e + 0.5
+```{r}
+prob_e <- seq(-5, 10, .5)
+result <- prob_e 
+print(result)
+```
 
 # Problem 4 (25 points)
 
 (a) (10 points) Define a function `imperial_to_metric` that takes in **two arguments**: a number of feet and a number of inches. The function should return the equivalent length in meters
+
+```{r}
+  imperial_to_metric <- function(feet,inches)
+  {
+    inches <- inches + (feet*12)
+    return(inches * 0.0254)
+  }
+```
 
 > To convert a length `L` from feet (`ft`) and inches (`inches`) to meters (`m`), one can use the relation: `L(m) = L(ft) × 0.3048 + L(inches) × 0.0254`
 
 
 (b) (5 points) Create a variable `height_in_meters` by passing your height in imperial to the `imperial_to_metric` function.
 
+```{r}
+height_in_meters <- imperial_to_metric(5,8)
+print(height_in_meters)
+```
+
+
 (c) (5 points) Evaluate `round(3.1415)`, `factorial(12)`, `mean(1:17)`.
 
-(d) (5 points) Create an object named `die` that contains the numbers one through six. Simulate a roll of the die with `R`’s `sample()` function. 
+```{r}
+round(3.1415)
+factorial(12)
+mean(1:17)
+```
+
+
+(d) (5 points) Create an object named `die` that contains the numbers one through six. Simulate a roll of the die with `R`’s `sample()` function.
+
+```{r}
+die <- 1:6
+sample(die)
+```
+
 
 
