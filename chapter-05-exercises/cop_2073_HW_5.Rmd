@@ -1,0 +1,188 @@
+---
+title: "Introduction to Data Science - Homework"
+author: "Milous Loche - `mloche1355@floridapoly.edu`"
+output: html_notebook
+---
+
+
+# Problem 1 
+
+Load the `tidyverse` package
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+> In this problem you will work with vehicle fuel economy data from the US EPA (Environmental Protection Agency), ranging from 1985-2015. 
+
+Read the data using the code below:
+
+```{r, message=FALSE, warning=FALSE}
+vehicles <- read_csv("https://raw.githubusercontent.com/reisanar/datasets/master/vehicles.csv")
+```
+
+   Variable  | Description
+-------------|-----------------------------------------
+`id`         | Unique EPA identifier
+`make`       | Manufacturer
+`model`      | Model name
+`year`       | Model year
+`class`      | EPA vehicle size class
+`trans`      | Transmission
+`drive`      | Drive train
+`cyl`        | Number of cylinders
+`displ`      | Engine displacement, in litres
+`fuel`       | Fuel type
+`hwy`        | Highway fuel economy, in mpg
+`cty`        | City fuel economy, in mpg
+
+
+(a) (6 points) **Select** the different manufacturers (makes) of the cars in this data set. Save this vector in a variable called `makes`
+
+```{r}
+# Solution for 1A:
+makes <- select(vehicles, make)
+```
+
+
+(b) (6 points) Can you determine **how many different car manufacturers** are represented by the data set?
+
+```{r}
+# Solution for 1B:
+count(makes)
+```
+
+
+(c) (6 points) **Filter** the data set for vehicles manufactured in 1998.
+
+```{r}
+# Solution for 1C:
+filter(vehicles, year == 1998)
+```
+
+
+(d) (6 points) **Mutate** the 1998 cars data frame to add a column `average` that has the average gas mileage (between city and highway MPG) for each car
+
+```{r}
+# Solution for 1D:
+vehicles <- mutate(vehicles, average = (hwy + cty) / 2)
+```
+
+
+(e) (6 points) Of all vehicles, what is the vehicle ID of the vehicle with the worst highway MPG?
+
+```{r}
+# Solution for 1E:
+vehicles %>%
+  arrange(-average)
+  
+```
+
+
+
+(f) (6 points) Which 2013 Acura model has the best highway MPG? Which 2015 Honda model has the best highway MPG?
+
+```{r}
+# Solution for 1F:
+
+  two13 <- filter(vehicles, make == "Acura", year == 2013)
+
+  
+```
+
+
+(g) (6 points) Create a **data visualization** of your choice using this dataset. Comment on the results.
+
+```{r}
+# Solution for 1G:
+
+```
+
+
+# Problem 2
+
+Load the `nycflights13` package. 
+
+```{r}
+library(nycflights13)
+```
+
+
+> Use the `flights` dataframe to answer the following questions. 
+
+(a) (6 points) Find all flights headed to MCO, and **select** only the origin, destination, and the departure time.
+
+```{r}
+# Solution for 2A:
+
+```
+
+
+(b) (6 points) Consider flights from JFK to TPA. What was the **average, minimum, and maximum** _air time_ of those flights? 
+
+```{r}
+# Solution for 2B:
+
+```
+
+
+(c) (6 points) What was the **average departure delay** in each month? Save this as a data frame `dep_delay_by_month`. (Hint: you may have to perform a grouping operation then summarizing your data).
+
+```{r}
+# Solution for 2C:
+
+```
+
+
+(d) (8 points) Which month had the **largest average departure delay**?
+
+```{r}
+# Solution for 2D:
+
+```
+
+
+(e) (8 points) To which destinations were the **average arrival delays the highest**?
+
+```{r}
+# Solution for 2E:
+
+```
+
+
+(f) (6 points) Which airline had the **smallest average arrival delay**?
+
+```{r}
+# Solution for 2F:
+
+```
+
+
+(g) (6 points) Find all flights that were operated by United, American, or Delta.
+
+```{r}
+# Solution for 2G:
+
+```
+
+
+(h) (6 points) Find all the flights (if any) headed to Orlando, Tampa, or Miami with a scheduled departure time later than 8:00 PM.
+
+```{r}
+# Solution for 2H:
+
+```
+
+
+(i) (6 points) Create a **data visualization** of your choice using this dataset. Comment on the results.
+
+```{r}
+# Solution for 2I:
+
+```
+
+
+
+
+
+
