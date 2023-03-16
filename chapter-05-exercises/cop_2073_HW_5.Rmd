@@ -74,7 +74,7 @@ vehicles <- mutate(vehicles, average = (hwy + cty) / 2)
 ```{r}
 # Solution for 1E:
 vehicles %>%
-  arrange(-average)
+  arrange(average)
   
 ```
 
@@ -84,8 +84,13 @@ vehicles %>%
 
 ```{r}
 # Solution for 1F:
+vehicles %>%
+  filter(make == "Acura", year == 2013) %>%
+    arrange(-average)
 
-  two13 <- filter(vehicles, make == "Acura", year == 2013)
+vehicles %>%
+filter(make == "Acura", year == 2015) %>%
+    arrange(-average)
 
   
 ```
@@ -95,9 +100,10 @@ vehicles %>%
 
 ```{r}
 # Solution for 1G:
-
+ggplot(data = vehicles) +
+  geom_bar(mapping = aes(x = year))
 ```
-
+This data visualization shows the number of cars in each year.
 
 # Problem 2
 
@@ -114,7 +120,9 @@ library(nycflights13)
 
 ```{r}
 # Solution for 2A:
-
+flights %>%
+  filter(dest == "MCO") %>%
+  select(origin,dest,dep_time)
 ```
 
 
@@ -122,7 +130,25 @@ library(nycflights13)
 
 ```{r}
 # Solution for 2B:
+flights %>%
+  filter(origin == "JFK" , dest == "TPA") %>%
+  summarize(average_air_time = mean(air_time, na.rm = TRUE))
+```
 
+
+```{r}
+# Solution for 2B:
+flights %>%
+  filter(origin == "JFK" , dest == "TPA") %>%
+  summarize(min_air_time = min(air_time,na.rm = TRUE))
+```
+
+
+```{r}
+# Solution for 2B:
+flights %>%
+  filter(origin == "JFK" , dest == "TPA") %>%
+  summarize(max_air_time = max(air_time,na.rm = TRUE))
 ```
 
 
